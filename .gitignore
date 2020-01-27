@@ -1,0 +1,2 @@
+#Do not include compiled .exe
+*.exe
