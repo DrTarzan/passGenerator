@@ -49,20 +49,16 @@ class Program
             System.Console.WriteLine();
             System.Console.WriteLine("New Password");
             System.Console.WriteLine("====================================");
-            DoPrint();
+            //Return standard password with 8 chars and two of each type
+            DoPrint(2, 2, 2, 2);
         }
-    }
-
-    static void DoPrint()
-    {
-        DoPrint(2, 2, 2, 2);
     }
 
     static void DoPrint(int lowerCase, int upperCase, int digit, int strangeChars)
     {
         string pass = GenerateRandomPassword(lowerCase, upperCase, digit, strangeChars);
         System.Console.WriteLine(string.Format("Length: {0}", pass.Length));
-        System.Console.WriteLine(string.Format("Password: {0} (already copied to clipboard)", pass));
+        System.Console.WriteLine(string.Format("Password: {0} (Copied to clipboard)", pass));
         Clipboard.SetText(pass);
     }
 
