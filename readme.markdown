@@ -1,5 +1,8 @@
 ﻿# GUIDGEN
 
+## PREREQUISITES
+* .NET Framework 3.5
+
 ## COMPILATION
 * Open command prompt as administrator
 	* Locate yourself to the same folder as passgen.cs
