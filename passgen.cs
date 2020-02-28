@@ -30,36 +30,40 @@ class Program
                     int arg1 = Convert.ToInt32(args[1].TrimStart('/').TrimStart('-'));
                     int arg2 = Convert.ToInt32(args[2].TrimStart('/').TrimStart('-'));
                     int arg3 = Convert.ToInt32(args[3].TrimStart('/').TrimStart('-'));
-                    System.Console.WriteLine();
-                    System.Console.WriteLine("New Password");
-                    System.Console.WriteLine("====================================");
-                    DoPrint(arg0, arg1, arg2, arg3);
+                    DoPrint(arg0, arg1, arg2, arg3, false);
                 }
                 catch
                 {
-                    System.Console.WriteLine();
-                    System.Console.WriteLine("Error");
-                    System.Console.WriteLine("====================================");
-                    System.Console.WriteLine("An error occured, please try again!");
+                    DoPrint(0, 0, 0, 0, true);
                 }
             }
+        }
+        else
+        {
+            //Return standard password with 8 chars and two of each type
+            DoPrint(2, 2, 2, 2, false);
+        }
+    }
+
+    static void DoPrint(int lowerCase, int upperCase, int digit, int strangeChars, bool error)
+    {
+        if (error)
+        {
+            System.Console.WriteLine();
+            System.Console.WriteLine("Error");
+            System.Console.WriteLine("====================================");
+            System.Console.WriteLine("An error occured, please try again!");
         }
         else
         {
             System.Console.WriteLine();
             System.Console.WriteLine("New Password");
             System.Console.WriteLine("====================================");
-            //Return standard password with 8 chars and two of each type
-            DoPrint(2, 2, 2, 2);
+            string pass = GenerateRandomPassword(lowerCase, upperCase, digit, strangeChars);
+            System.Console.WriteLine(string.Format("Length: {0}", pass.Length));
+            System.Console.WriteLine(string.Format("Password: {0} (Copied to clipboard)", pass));
+            Clipboard.SetText(pass);
         }
-    }
-
-    static void DoPrint(int lowerCase, int upperCase, int digit, int strangeChars)
-    {
-        string pass = GenerateRandomPassword(lowerCase, upperCase, digit, strangeChars);
-        System.Console.WriteLine(string.Format("Length: {0}", pass.Length));
-        System.Console.WriteLine(string.Format("Password: {0} (Copied to clipboard)", pass));
-        Clipboard.SetText(pass);
     }
 
     private static string GenerateRandomPassword(int lowerCaseCount, int upperCaseCount, int digitCount, int strangeCharsCount)
