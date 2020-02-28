@@ -14,13 +14,13 @@ class Program
             {
                 System.Console.WriteLine();
                 System.Console.WriteLine("Usage:");
-                System.Console.WriteLine("\t> pass ");
-                System.Console.WriteLine("\t> pass -[lowerCaseCount] -[upperCaseCount] -[digitCount] -[strangeCharsCount]");
+                System.Console.WriteLine("\t> passgen ");
+                System.Console.WriteLine("\t> passgen -[lowerCaseCount] -[upperCaseCount] -[digitCount] -[strangeCharsCount]");
                 System.Console.WriteLine();
                 System.Console.WriteLine("Examples:");
-                System.Console.WriteLine("\t> pass \t ...Gives one random standard Password thats been copied to clipboard");
-                System.Console.WriteLine("\t> pass -2 -2 -2 -2 \t ...Gives an random Password with a total of 8 chars thats been copied to clipboard.");
-                System.Console.WriteLine("\t> pass -4 -4 -4 -4 \t ...Gives an random Password with a total of 16 chars and so on also copied to clipboard.");
+                System.Console.WriteLine("\t> passgen \t ...Gives one random standard Password thats been copied to clipboard");
+                System.Console.WriteLine("\t> passgen -2 -2 -2 -2 \t ...Gives an random Password with a total of 8 chars thats been copied to clipboard.");
+                System.Console.WriteLine("\t> passgen -4 -4 -4 -4 \t ...Gives an random Password with a total of 16 chars and so on also copied to clipboard.");
             }
             else
             {
